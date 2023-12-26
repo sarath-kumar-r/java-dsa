@@ -1,4 +1,4 @@
-package com.sarathkumar.dsa.roundrobin;
+package com.skr.dsa.roundrobin;
 
 import java.util.List;
 
