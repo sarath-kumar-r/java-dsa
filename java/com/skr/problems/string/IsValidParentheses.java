@@ -1,4 +1,4 @@
-package com.skr.problems;
+package com.skr.problems.string;
 
 import java.util.ArrayDeque;
 

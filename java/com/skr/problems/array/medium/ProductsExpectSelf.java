@@ -1,5 +1,7 @@
 package com.skr.problems.array.medium;
 
+import java.util.stream.IntStream;
+
 public class ProductsExpectSelf {
 
     public static int[] productExceptSelf(int[] nums) {
@@ -33,7 +35,8 @@ public class ProductsExpectSelf {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4};
+        int[] nums = {1, 2, 3, 4}; // {1, 1, 2, 6}- left
+        // {24, 12, 4, 1}
         int[] result = productExceptSelf(nums);
         for (int i : result) {
             System.out.print(i + " ");

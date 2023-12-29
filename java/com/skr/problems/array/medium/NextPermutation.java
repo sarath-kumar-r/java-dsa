@@ -1,4 +1,4 @@
-package com.skr.problems;
+package com.skr.problems.array.medium;
 
 import java.util.Arrays;
 
