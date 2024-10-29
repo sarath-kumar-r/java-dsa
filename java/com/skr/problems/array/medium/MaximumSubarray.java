@@ -2,7 +2,7 @@ package com.skr.problems.array.medium;
 
 public class MaximumSubarray {
 
-    public int maxSubArray1(int[] nums) {
+    public static int maxSubArray1(int[] nums) {
 
         int maxSum = nums[0];
         int currentSum = nums[0];
@@ -10,6 +10,20 @@ public class MaximumSubarray {
         for (int i = 1; i < nums.length; i++) {
             currentSum = Math.max(nums[i], currentSum + nums[i]);
             maxSum = Math.max(maxSum, currentSum);
+        }
+
+        return maxSum;
+    }
+
+    public static int maxSubArray2(int[] nums) {
+
+        int maxSum = nums[0];
+        int currentSum = 0;
+
+        for (int i: nums) {
+            currentSum += i;
+            maxSum = Math.max(currentSum, maxSum);
+            if (currentSum < 0) currentSum = 0;
         }
 
         return maxSum;
@@ -52,8 +66,9 @@ public class MaximumSubarray {
     }
 
     public static void main(String[] args) {
-        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        int result = maxSubArray(nums);
+//        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int[] nums = {-2, -1, -3, -4};
+        int result = maxSubArray2(nums);
         System.out.println("Maximum Subarray Sum: " + result); // Output: 6 (the subarray [4, -1, 2, 1] has the maximum sum)
     }
 }

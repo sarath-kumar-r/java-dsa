@@ -111,4 +111,53 @@ public class MergeSort {
         arr[e] = temp;
         return pivotIndex;
     }
+
+
+    private void merge(int[] arr, int start, int end) {
+
+        if( start < end) {
+            int mid = start + (end - start) / 2;
+            merge(arr, start, mid);
+            merge(arr, mid + 1, end);
+
+            sortAndMerge(arr, start, mid, end);
+        }
+
+    }
+
+    private void sortAndMerge(int[] arr, int start, int mid, int end) {
+        int n1 = mid - start + 1;
+        int n2 = end - mid;
+
+        int[] leftArr = Arrays.copyOfRange(arr, start, mid + 1);
+        int[] rightArr = Arrays.copyOfRange(arr, mid + 1, end +1);
+
+        int i = 0, j = 0, k = start;
+
+        while(i < n1 && j < n2) {
+            if(leftArr[i] <= rightArr[j]) {
+                arr[k] = leftArr[i];
+                i++;
+            } else {
+                arr[k] = rightArr[j];
+                j++;
+            }
+            k++;
+        }
+
+        while(i < n1) {
+            arr[k] = leftArr[i];
+            i++;
+            k++;
+        }
+
+        while(j < n2) {
+            arr[k] = rightArr[j];
+            j++;
+            k++;
+        }
+
+
+    }
+
 }
